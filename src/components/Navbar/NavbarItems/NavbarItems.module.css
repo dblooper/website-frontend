@@ -1,0 +1,17 @@
+.NavbarItems {
+    margin: 0;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    list-style: none;
+    height: 100%;
+}
+
+@media(max-width: 600px) {
+    .NavbarItems{
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+}
