@@ -3,7 +3,7 @@ import classes from './Subject.module.css'
 
 const Subject = (props) => {
     return (
-        <div className={["col-lg-3 col-sm-12"].join(' ')}>
+        <div className={ classes.Subject }>
             <section>
                 <h3>{props.title}</h3>
                 <p>{props.description}</p>

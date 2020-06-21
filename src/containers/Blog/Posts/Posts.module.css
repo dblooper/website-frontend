@@ -1,0 +1,7 @@
+.Posts {
+    width: 70%;
+    height: 100%;
+    margin: 0;
+    background-color: yellow;
+    box-sizing: border-box;
+}

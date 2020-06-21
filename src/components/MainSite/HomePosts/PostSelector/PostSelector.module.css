@@ -1,0 +1,43 @@
+.PostSelector li {
+    width: 60%;
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: var(--background-color);
+    color: var(--navbar-color);
+    box-shadow: inset 0px 0px 15px 0px black;
+    border-radius: 1rem;
+
+}
+
+.PostSelector li ul {
+    margin: 0 0.5rem;
+    padding: 1.2rem 0rem;
+    box-sizing: border-box;
+    width: 8rem;
+    text-align: center;    
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out;
+    transition-property: background-color, transform;
+}
+
+.PostSelector li ul:hover,
+.PostSelector .Active {
+    background-color: white;
+    color: var(--main-text-color);
+    transform: scale(1.05, 1.15);
+    /* box-shadow: 0px 0px 15px 0px black; */
+}
+
+@media(max-width: 600px) {
+    .PostSelector li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .PostSelector li ul {
+        width: 100%;
+    }
+}

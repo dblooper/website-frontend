@@ -1,25 +1,38 @@
 .Navbar {
-    z-index: 100;
+    z-index: 1;
     height: var(--navbar-height);
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--navbar-color);
+    background-color: transparent;
     font-size: 1.2rem;
-    box-shadow: 0px 2px 8px black;
     box-sizing: border-box;
     padding: 0.2rem 5.5rem;
+}
+
+.AppendShadow {
+    position: fixed;
+    background-color: var(--jumbotron-main-color);
+    box-shadow: 0px 2px 8px black;
+    animation-name: injectNavbar;
+    animation-duration: 1s;
+}
+
+@keyframes injectNavbar {
+    0% {
+        top: -70px
+    }
 }
 
 .Navbar nav {
     height: 100%;
 }
 
-@media(max-width: 600px) {
+@media(max-width: 800px) {
     .Desktop {
         display: none;
     }

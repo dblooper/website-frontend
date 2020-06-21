@@ -1,29 +1,70 @@
-@import url('https://fonts.googleapis.com/css?family=Electrolize');
-@import url('https://fonts.googleapis.com/css?family=Odibee+Sans');
-
-:root {
-    --background-color: #465362;
-    --jumbotron-main-color: blue;
-    --navbar-color: #F9DC5C;
-    --help-color: #ea0470;
-    --main-text-color: #011936;
-    --content-color: #FFFFFF;
-    --navbar-height: 70px;
-    
-}
-html {
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-    font-family: 'Electrolize', 'Arial';
+.Layout {
+    width: 100%;
 }
 
-body {
-    margin: 0px;
-    padding: 0px;
-}
-
+@media(min-width: 801px) { 
 .Content {
     margin-top: -80px;
+    animation-name: unslideContent;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
 }
 
+.SlideContent {
+    animation-name: slideContent;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideContent {
+    0% {
+        margin-top: -80px;
+    }
+    100% {
+        margin-top: -680px;
+    }
+}
+
+@keyframes unslideContent {
+    0% {
+        margin-top: -680px;
+    }
+    100% {
+        margin-top: -80px;
+    }
+}
+
+}
+@media(max-width: 800px) {
+    .Content {
+        margin-top: -300px;
+        animation-name: unslideContent;
+        animation-duration: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    
+    .SlideContent {
+        animation-name: slideContent;
+        animation-duration: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes slideContent {
+        0% {
+            margin-top: -300px;
+        }
+        100% {
+            margin-top: -680px;
+        }
+    }
+    
+    @keyframes unslideContent {
+        0% {
+            margin-top: -680px;
+        }
+        100% {
+            margin-top: -300px;
+        }
+    }
+
+}

@@ -1,30 +1,16 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import classes from './Subjects.module.css'
-import Subject from './Subject/Subject'
+import Subject from '../../../components/MainSite/Subjects/Subject/Subject'
+import SectionTitle from '../../../components/SectionTitle/SectionTitle'
+import Spinner from '../../../components/Spinner/Spinner'
 
 class Subjects extends Component {
     state = {
-        loadedSubjects: []
-    }
-
-    componentDidMount() {
-        //console.log(this.props);
-        axios.get('http://localhost:8081/public/blog/subjects').then(
-            response => {
-                console.log(response.data);
-                this.setState({loadedSubjects: response.data});
-                
-            }
-        ).catch(
-            error => {
-                console.log(error);
-            }
-        )
+        numberOfSpinners: 4
     }
 
     render() { 
-        const subjectsFetched = this.state.loadedSubjects.map(
+        let subjectsFetched = this.props.loadedSubjects.map(
             subj => {
                 return <Subject key={subj.subjectName} 
                                 title={ subj.subjectName } 
@@ -32,8 +18,15 @@ class Subjects extends Component {
                         />;
             }
         );
+        if(!subjectsFetched.length) {
+            for(let i=1 ; i <= this.state.numberOfSpinners; i++) {
+                subjectsFetched.push(<Spinner key={"spinner" + i}/>)
+            }
+            
+        }
         return (
             <div>
+                <SectionTitle header={this.props.header}/>
                 <section className={[classes.Subjects, classes.Row].join(' ')}>
                     { subjectsFetched }
                 </section>

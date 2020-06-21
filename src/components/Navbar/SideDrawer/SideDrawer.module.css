@@ -2,7 +2,7 @@
     z-index: 200;
     position: fixed;
     width: 290px;
-    max-width: 80%;
+    width: 80%;
     height: 100%;
     left: 0;
     top: 0;
@@ -12,7 +12,7 @@
     transition: transform 0.3s ease-out;
 }
 
-@media(min-width: 600px) {
+@media(min-width: 800px) {
     .SideDrawer {
         display: none;
     }
@@ -32,6 +32,6 @@
 }
 
 .Footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    bottom:0%
 }

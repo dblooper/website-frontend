@@ -1,6 +1,6 @@
 .Subject {
     margin: 0;
-    padding: 0 !important;
+    padding: 0;
 }
 
 .Subject section {
@@ -16,7 +16,7 @@
 
 .Subject section:hover {
     transform: scale(1.05, 1.1);
-    background-color: rgba(249,220,92,1);
+    background-color: var(--navbar-color);
 }
 
 .Subject section p {

@@ -1,0 +1,14 @@
+.TitleHeader {
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 8rem;
+}
+
+.TitleHeader h1 {
+    margin: 0;
+    font-size: 4rem;
+    padding-left: 2rem;
+}

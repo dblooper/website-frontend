@@ -8,10 +8,24 @@
     height: 100%;
 }
 
-@media(max-width: 600px) {
-    .NavbarItems{
+.Auth {
+        display: flex;
+        border: 1px solid var(--navbar-color);
+        border-radius: 2rem;
+        flex-flow: row;
+        box-sizing: unset;
+        margin: 0 2rem;
+        margin-right: 0;
+}
+
+@media(max-width: 800px) {
+    .NavbarItems, .Auth{
         flex-direction: column;
-        margin: auto;
+        margin: 1rem auto;
         align-items: center;
     }
+    .NavbarItems .MobileHide {
+        display: none;
+    }
 }
+

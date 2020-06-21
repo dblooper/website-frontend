@@ -1,0 +1,20 @@
+.Post {
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.Post .TextData {
+    width: 80%;    
+}
+
+.Post .VoteData {
+    width: 20%;
+}
+
+.Post:hover {
+    box-shadow: 0px 0px 10px black;
+}

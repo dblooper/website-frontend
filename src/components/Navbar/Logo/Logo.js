@@ -1,10 +1,11 @@
 import React from 'react';
 import classes from './Logo.module.css'
-import logo from '../../../assets/jascry-icon.png'
+import {NavLink} from 'react-router-dom'
 
 const Logo = (props) => (
+
     <div className={props.change ? [classes.LogoChange,classes.Logo].join(' ') : classes.Logo}>
-        {/* <img src={logo} alt="LOGO" /> */}
+        <NavLink to="/" exact>
             <div >
                 <p className={classes.Nick}>
                     <span className={classes.LogoBracket}>(</span>jascry<span className={classes.LogoBracket}>)</span>
@@ -13,6 +14,8 @@ const Logo = (props) => (
                     Daniel Koplenski
                 </p>
             </div>
+        </NavLink>
     </div>
+
 );
 export default Logo;

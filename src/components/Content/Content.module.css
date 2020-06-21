@@ -1,20 +1,10 @@
 .Content {
-    width: 85%;
+    width: 90%;
     margin: auto;
     min-height: 1000px;
+    overflow: auto;
     /* background-color: wheat; */
     background-color: var(--content-color);
-    box-shadow: 0px 10px 15px 0px black;
-    animation-name: sliding;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 6px 1px black;
 }
-
-/* @keyframes sliding {
-    0% {
-        margin-top: 0;
-    }
-    100% {
-        margin-top: -280px;
-    }
-} */

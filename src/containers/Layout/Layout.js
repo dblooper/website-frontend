@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import classes from  './Layout.module.css'
-import Navbar from '../../components/Navbar/Navbar'
-import Jumbotron from '../../components/Jumbotron/Jumbotron'
+import Navbar from '../Navbar/Navbar'
+import Jumbotron from '../Jumbotron/Jumbotron'
 import Content from '../../components/Content/Content'
-import Aux from '../../hoc/Aux/Aux'
 import SideDrawer from '../../components/Navbar/SideDrawer/SideDrawer';
 import Footer from '../../components/Footer/Footer'
+import {withRouter} from 'react-router-dom'
 
 class Layout extends Component {
     state = {
-        showSideDrawer: false
+        showSideDrawer: false,
     }
 
     showSideDrawerCloseHandler = () => {
@@ -24,20 +24,21 @@ class Layout extends Component {
 
     render () {
         return(
-            <div>
+            <div className={classes.Layout}>
                 <Navbar drawerToggleStatus={this.state.showSideDrawer} drawerTogglerClicked = {this.sideDrawerToggleHandler}/>
                 <SideDrawer 
                     open={this.state.showSideDrawer}
                     closed={this.showSideDrawerCloseHandler} />
-                <Jumbotron/>
-                <div className={classes.Content}>
+                <Jumbotron hidden={!(this.props.location.pathname === '/')}/>
+                <div className={ this.props.location.pathname === '/' ? classes.Content : [classes.Content, classes.SlideContent].join(' ')}>
                     <Content generatedContent={this.props.children}/>
                 </div>
-                <Footer/>
+                <div id="footer"><Footer/></div>
+                
             </div>
         );
     }
 
 }
 
-export default Layout;
+export default withRouter(props => <Layout {...props} />)

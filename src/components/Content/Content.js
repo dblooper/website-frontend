@@ -1,10 +1,14 @@
 import React from 'react'
 import classes from './Content.module.css'
+import {withRouter} from 'react-router-dom'
 
-const Content = (props) => (
-    <div className={classes.Content}>
-        {props.generatedContent}
-    </div>
-);
+const Content = (props) => {
+    
+    return(
+        <div className={ props.location.pathname === '/' ? classes.Content : [classes.Content, classes.SlideContent].join(' ')}>
+            {props.generatedContent}
+        </div>
+    )
+};
 
-export default Content;
+export default withRouter(props => <Content {...props} />);
